@@ -12,8 +12,8 @@ def run_system_monolith():
     
     loading = 0
     while loading < 5:
-        print("Loading module " + str(loading))
-        
+        print("Loading module " + str(loading+1) + "...")
+
     
     while True:
         print("\n--- MENU ---")
@@ -35,11 +35,11 @@ def run_system_monolith():
             new_name = input("Name: ")
             new_rank = input("Rank: ")
             new_div = input("Division: ")
-            
-           
+
+
             n.append(new_name)
             print("Crew member added.")
-            
+          
         elif opt == "3":
             rem = input("Name to remove: ")
            
