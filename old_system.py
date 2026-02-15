@@ -30,18 +30,20 @@ def run_system_monolith():
             print("Current Crew List:")
             
             for i in range(len(n)):
-                print(n[i] + " - " + r[i]) 
+                print(n[i] + " - " + r[i]+ " - " + d[i]) 
                 
         elif opt == "2":
             new_name = input("Name: ")
             new_rank = input("Rank: ")
             new_div = input("Division: ")
-
+             
 
             n.append(new_name)
             r.append(new_rank)
             d.append(new_div)
             print("Crew member added.")
+
+             
           
         elif opt == "3":
             rem = input("Name to remove: ")
@@ -88,7 +90,7 @@ def run_system_monolith():
         fuel = 100
         consumption = 0
         while fuel > 0:
-                consumption += 30
+                consumption += 15
                 fuel -= consumption
                 print("Idling...")
                 if 0<fuel<50: 
