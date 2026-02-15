@@ -63,7 +63,7 @@ def remove_member(crew_names, crew_ranks, crew_divisions, crew_ids):
     crew_ranks.pop(idx)
     crew_divisions.pop(idx)
     crew_ids.pop(idx)
-    print("Crew member removed.", remove_member.__name__)
+    print("Crew member removed.")
 
 
 def update_rank(crew_names, crew_ranks, crew_divisions, crew_ids):
@@ -80,7 +80,7 @@ def update_rank(crew_names, crew_ranks, crew_divisions, crew_ids):
         return
 
     crew_ranks[idx] = new_rank
-    print("Crew member rank updated.", update_rank.__name__)
+    print("Crew member rank updated.")
 
 def display_roster(crew_names, crew_ranks, crew_divisions, crew_ids):
     print("\nCurrent Crew Roster:")
@@ -92,7 +92,7 @@ def display_roster(crew_names, crew_ranks, crew_divisions, crew_ids):
 
 
 def search_crew(crew_names, crew_ranks, crew_divisions, crew_ids):
-    keyword = input("Keyword to search: ").strip().capitalize()
+    keyword = input("Keyword to search: ").strip()
     if keyword not in crew_names:
         print("Crew member not found.")
         return
