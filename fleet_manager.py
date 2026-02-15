@@ -77,3 +77,11 @@ def update_rank(crew_names, crew_ranks, crew_divisions, crew_ids):
 
     crew_ranks[idx] = new_rank
     print("Crew member rank updated.", update_rank.__name__)
+
+def display_roster(crew_names, crew_ranks, crew_divisions, crew_ids):
+    print("\nCurrent Crew Roster:")
+    if len(crew_names) == 0:
+        print("No crew members found.")
+        return
+    for i in range(len(crew_names)):
+        print(f"{crew_names[i]} - {crew_ranks[i]} - {crew_divisions[i]} - {crew_ids[i]}")
