@@ -1,4 +1,4 @@
-def init_crew():
+def init_database():
     crew_names = ["Picard", "Riker", "Kirk", "Spock", "Uhura"]
     crew_ranks = ["Commodore", "Captain", "Commander", "Lieutenant","Ensign"]
     crew_divisions = ["Command", "Operations", "Science", "Medical", "Engineering"]
@@ -7,7 +7,7 @@ def init_crew():
     return crew_names, crew_ranks, crew_divisions, crew_ids
 
 
-def display_crew(user):
+def display_menu(user):
     print("\n==============================")
     print("     FLEET MANAGEMENT SYSTEM")
     print("==============================")
@@ -21,4 +21,30 @@ def display_crew(user):
 
     option = input("Select option: ").strip()
     return option
+
+
+def add_member(crew_names, crew_ranks, crew_divisions, crew_ids):
+    name = input("Name: ").strip().capitalize()
+    rank = input("Rank: ").strip().capitalize()
+    division = input("Division: ").strip().capitalize()
+    crew_id = input("Crew ID: ").strip().upper()
+
+    if rank not in ["Commodore", "Captain", "Commander", "Lieutenant", "Ensign"]:
+        print("Invalid rank. Crew member not added.")
+        return
+    if division not in ["Command", "Operations", "Science", "Medical", "Engineering"]:
+        print("Invalid division. Crew member not added.")
+        return
+    if name in crew_names:
+        print("Crew member already exists. Not added.")
+        return
+    if crew_id in crew_ids:
+        print("Crew ID already exists. Not added.")
+        return
+
+    crew_names.append(name)
+    crew_ranks.append(rank)
+    crew_divisions.append(division)
+    crew_ids.append(crew_id)
+    print("Crew member added.")
 
