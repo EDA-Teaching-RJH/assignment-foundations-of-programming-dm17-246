@@ -1,7 +1,7 @@
 def init_database():
-    crew_names = ["Picard", "Riker", "Kirk", "Spock", "Uhura"]
+    crew_names = ["Garrovick", "Kirk", "Spock", "Uhura", "Keenser"]
     crew_ranks = ["Commodore", "Captain", "Commander", "Lieutenant","Ensign"]
-    crew_divisions = ["Command", "Operations", "Science", "Medical", "Engineering"]
+    crew_divisions = ["Command", "Science", "Engineering", "Operations", "Medical"]
     crew_ids = ["NC1001", "NC1002", "NC1003", "NC1004", "NC1005"]
     
     return crew_names, crew_ranks, crew_divisions, crew_ids
@@ -132,4 +132,25 @@ def count_officers(crew_ranks):
     count = sum(1 for rank in crew_ranks if rank in high_ranking)
     print(f"High ranking officers: {count}")
 
-    
+def main():
+    crew_names, crew_ranks, crew_divisions, crew_ids = init_database()
+    user = input("Enter your name: ").strip().capitalize()
+
+    while True:
+        option = display_menu(user)
+
+        if option == "1":
+            display_roster(crew_names, crew_ranks, crew_divisions, crew_ids)
+        elif option == "2":
+            add_member(crew_names, crew_ranks, crew_divisions, crew_ids)
+        elif option == "3":
+            remove_member(crew_names, crew_ranks, crew_divisions, crew_ids)
+        elif option == "4":
+            count_officers(crew_ranks)
+        elif option == "5":
+            print("Exiting Fleet Management System. Goodbye!")
+            break
+        else:
+            print("Invalid option. Please try again.")
+
+main()
