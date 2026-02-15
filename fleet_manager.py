@@ -85,3 +85,16 @@ def display_roster(crew_names, crew_ranks, crew_divisions, crew_ids):
         return
     for i in range(len(crew_names)):
         print(f"{crew_names[i]} - {crew_ranks[i]} - {crew_divisions[i]} - {crew_ids[i]}")
+
+
+def search_crew(crew_names, crew_ranks, crew_divisions, crew_ids):
+    keyword = input("Keyword to search: ").strip().capitalize()
+    if keyword not in crew_names:
+        print("Crew member not found.")
+        return
+
+    idx = crew_names.index(keyword)
+    print(f"Name: {crew_names[idx]}")
+    print(f"Rank: {crew_ranks[idx]}")
+    print(f"Division: {crew_divisions[idx]}")
+    print(f"Crew ID: {crew_ids[idx]}")
