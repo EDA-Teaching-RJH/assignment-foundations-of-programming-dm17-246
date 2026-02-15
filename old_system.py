@@ -37,16 +37,18 @@ def run_system_monolith():
             new_rank = input("Rank: ").capitalize()
             new_div = input("Division: ").capitalize()
             def validate_input(name, rank, div):
+                valid=True
                 if rank not in ["Captain", "Commander", "Lt. Commander", "Lieutenant"]:
                     print("Invalid rank. Crew member not added.")
+                    valid=False
                 if div not in ["Command", "Operations", "Security"]:
                     print("Invalid division. Crew member not added.")
-                    return False
-                elif name in n:
+                    valid=False
+                if name in n:
                     print("Crew member already exists. Not added.")
                     return False
                 else:
-                    return True
+                        return valid
             if not validate_input(new_name, new_rank, new_div):
                 continue
         
