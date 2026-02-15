@@ -5,7 +5,7 @@ d = ["Command", "Command", "Operations", "Security"]
 active = True
 
 def run_system_monolith():
-    print("BOOTING SYSTEM...")
+    print("\nBOOTING SYSTEM...")
     print("...")
     print("WELCOME TO FLEET COMMAND")
     

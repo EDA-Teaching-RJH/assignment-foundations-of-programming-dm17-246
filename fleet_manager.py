@@ -15,8 +15,12 @@ def display_menu(user):
     print("1 - View Crew")
     print("2 - Add Crew Member")
     print("3 - Remove Crew Member")
-    print("4 - Analyze Crew Data")
-    print("5 - Exit")
+    print("4 - Update Crew Rank")
+    print("5 - Search Crew Member")
+    print("6 - Filter by Division")
+    print("7 - Calculate Payroll")
+    print("8 - Analyze Crew Data")
+    print("9 - Exit")
           
 
     option = input("Select option: ").strip()
@@ -146,8 +150,16 @@ def main():
         elif option == "3":
             remove_member(crew_names, crew_ranks, crew_divisions, crew_ids)
         elif option == "4":
-            count_officers(crew_ranks)
+            update_rank(crew_names, crew_ranks, crew_divisions, crew_ids)
         elif option == "5":
+            search_crew(crew_names, crew_ranks, crew_divisions, crew_ids)
+        elif option == "6":
+            filter_by_division(crew_names, crew_ranks, crew_divisions, crew_ids)
+        elif option == "7":
+            calculate_payroll(crew_names, crew_ranks, crew_divisions, crew_ids)
+        elif option == "8":
+            count_officers(crew_ranks)
+        elif option == "9":
             print("Exiting Fleet Management System. Goodbye!")
             break
         else:
