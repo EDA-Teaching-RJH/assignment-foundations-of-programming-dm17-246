@@ -47,8 +47,8 @@ def run_system_monolith():
                 if name in n:
                     print("Crew member already exists. Not added.")
                     return False
-                else:
-                        return valid
+                
+                return valid
             if not validate_input(new_name, new_rank, new_div):
                 continue
         
