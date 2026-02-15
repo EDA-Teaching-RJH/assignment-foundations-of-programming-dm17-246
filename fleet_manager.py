@@ -126,4 +126,10 @@ def calculate_payroll(crew_names, crew_ranks, crew_divisions, crew_ids):
     for rank in crew_ranks:
         total_payroll += rank_salaries.get(rank, 0)
     print(f"Total Payroll: ${total_payroll}")
+
+def count_officers(crew_ranks):
+    high_ranking = ["Commodore", "Captain", "Commander"]
+    count = sum(1 for rank in crew_ranks if rank in high_ranking)
+    print(f"High ranking officers: {count}")
+
     
