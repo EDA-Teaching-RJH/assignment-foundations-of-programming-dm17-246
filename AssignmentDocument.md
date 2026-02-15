@@ -223,7 +223,8 @@ Full Implementation = **4 Marks**
 
 1.  **Legacy Code Post-Mortem:** A breakdown of the 10 bugs found in Part A. You must explain _why_ the bug occurred (e.g., "The code `if x = 1` causes a Syntax Error because `=` is assignment, whereas `==` is comparison" ). **(20 Marks)  2 per bug**
     
-2.  **Parallel List Strategy:** Explain the dangers of using parallel lists. What happens if you remove a name from the `names` list but forget to remove the ID from the `ids` list? How did your code prevent this, or how could it be prevented? **(5 Marks)**
+2.  **Parallel List Strategy:** Explain the dangers of using parallel lists. What happens if you remove a name from the `names` list but forget to remove the ID from the `ids` list? How did your code prevent this, or how could it be prevented?
+ **(5 Marks)**
 Incomplete = **0 Marks**
 Partial Implementation = **3 Marks** 
 Full Implementation = **5 Marks**

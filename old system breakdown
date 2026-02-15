@@ -1,0 +1,102 @@
+n = ["Picard", "Riker", "Data", "Worf"]
+r = ["Captain", "Commander", "Lt. Commander", "Lieutenant"]
+d = ["Command", "Command", "Operations", "Security"]
+
+active = True
+
+def run_system_monolith():
+    print("BOOTING SYSTEM...")
+    print("...")
+    print("WELCOME TO FLEET COMMAND")
+    
+    
+    loading = 0
+    while loading < 5:
+        print("Loading module " + str(loading))
+#No increase of loading variable, will cause infinite loop. Should be: loading += 1 to properly increment the loading variable and eventually exit the loop.        
+    
+    while True:
+        print("\n--- MENU ---")
+        print("1. View Crew")
+        print("2. Add Crew")
+        print("3. Remove Crew")
+        print("4. Analyze Data")
+        print("5. Exit")
+        
+        opt = input("Select option: ")
+        
+        if opt = "1":  
+            print("Current Crew List:")
+#syntax error due to single equals sign used for comparison instead of double equals(==)
+            
+            for i in range(10):
+                print(n[i] + " - " + r[i]) 
+#This will cause an IndexError if there are less than 10 crew members in the list. It should be: for i in range(len(n)): to properly iterate through the list regardless of its length.
+
+
+        elif opt == "2":
+            new_name = input("Name: ")
+            new_rank = input("Rank: ")
+            new_div = input("Division: ")
+#Has no validation for user input and will accept any string, including empty strings because does not check for valid ranks or divisions.
+           
+            n.append(new_name)
+            print("Crew member added.")
+            #Doesn't append rank and division.
+            
+        elif opt == "3":
+            rem = input("Name to remove: ")
+#Not having .capitalize() will cause issues if the user inputs a name with lowercase characters and cause the function to count it as an invalid input.
+           
+            idx = n.index(rem)
+            n.pop(idx)
+            r.pop(idx)
+            d.pop(idx)
+            print("Removed.")
+#Does not account for ValueError(Name not found) and will crash if user inputs a name that is not in the list as except ValueError is absent.
+
+            
+        elif opt == "4":
+            print("Analyzing...")
+            count = 0
+            
+            for rank in r:
+                if rank == "Captain" or "Commander": 
+                    count = count + 1
+            print("High ranking officers: " + count) 
+# This logic is flawed as it does not account for the fact that the condition will always be true due to the way it is structured. It should be: if rank == "Captain" or rank == "Commander": to properly check each rank against both conditions.
+        elif opt == "5":
+            print("Shutting down.")
+            break
+            
+        else:
+            print("Invalid.")
+            
+        
+        x = 10
+        if x > 5:
+            print("System Check OK")
+        else:
+            print("System Failure")
+#Does not account for invalid input amd essentially always prints "System Check OK" as x explicitly is assigned to do that becaus 10>5.   
+       
+        if len(n) > 0:
+            print("Database has entries.")
+        if len(n) == 0:
+            print("Database empty.")
+
+#Not completed these functions yet via incomplete logic and due to the consumption variable not being updated, the fuel will never decrease and the loop will run indefinitely. 
+        fuel = 100
+        consumption = 0
+        while fuel > 0:
+            
+            print("Idling...")
+            break 
+            
+        print("End of cycle.")
+
+run_system_monolith
+# no brackets used to call function
+
+
+
