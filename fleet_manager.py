@@ -60,3 +60,20 @@ def remove_member(crew_names, crew_ranks, crew_divisions, crew_ids):
     crew_divisions.pop(idx)
     crew_ids.pop(idx)
     print("Crew member removed.", remove_member.__name__)
+
+
+def update_rank(crew_names, crew_ranks, crew_divisions, crew_ids):
+    ID = input("ID to update: ").strip().upper()
+    if ID not in crew_ids:
+        print("Crew member not found. No changes made.")
+        return
+
+    idx = crew_ids.index(ID)
+    print(f"Current Rank: {crew_ranks[idx]}")
+    new_rank = input("New Rank: ").strip().capitalize()
+    if new_rank not in ["Commodore", "Captain", "Commander", "Lieutenant", "Ensign"]:
+        print("Invalid rank. No changes made.")
+        return
+
+    crew_ranks[idx] = new_rank
+    print("Crew member rank updated.", update_rank.__name__)
