@@ -33,10 +33,23 @@ def run_system_monolith():
                 print(n[i] + " - " + r[i]+ " - " + d[i]) 
                 
         elif opt == "2":
-            new_name = input("Name: ")
-            new_rank = input("Rank: ")
-            new_div = input("Division: ")
-             
+            new_name = input("Name: ").capitalize()
+            new_rank = input("Rank: ").capitalize()
+            new_div = input("Division: ").capitalize()
+            def validate_input(name, rank, div):
+                if rank not in ["Captain", "Commander", "Lt. Commander", "Lieutenant"]:
+                    print("Invalid rank. Crew member not added.")
+                if div not in ["Command", "Operations", "Security"]:
+                    print("Invalid division. Crew member not added.")
+                    return False
+                elif name in n:
+                    print("Crew member already exists. Not added.")
+                    return False
+                else:
+                    return True
+            if not validate_input(new_name, new_rank, new_div):
+                continue
+        
 
             n.append(new_name)
             r.append(new_rank)
