@@ -6,3 +6,19 @@ def init_crew():
     
     return crew_names, crew_ranks, crew_divisions, crew_ids
 
+
+def display_crew(user):
+    print("\n==============================")
+    print("     FLEET MANAGEMENT SYSTEM")
+    print("==============================")
+    print(f"Welcome, {user}!\n")
+    print("1 - View Crew")
+    print("2 - Add Crew Member")
+    print("3 - Remove Crew Member")
+    print("4 - Analyze Crew Data")
+    print("5 - Exit")
+          
+
+    option = input("Select option: ").strip()
+    return option
+
