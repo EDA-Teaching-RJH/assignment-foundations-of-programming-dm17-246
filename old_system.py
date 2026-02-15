@@ -61,7 +61,7 @@ def run_system_monolith():
              
           
         elif opt == "3":
-            rem = input("Name to remove: ")
+            rem = input("Name to remove: ").capitalize()
            
             try:
                 idx = n.index(rem)
